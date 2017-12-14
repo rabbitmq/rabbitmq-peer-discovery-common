@@ -266,13 +266,13 @@ maybe_configure_proxy() ->
   Map = ?CONFIG_MODULE:config_map(?CONFIG_KEY),
   case map_size(Map) of
       0 ->
-          rabbit_log:debug("HTTP client proxy is not configured"),
+          rabbit_log:debug("Peer discovery: HTTP client proxy is not configured"),
           ok;
       _ ->
           HttpProxy       = ?CONFIG_MODULE:get(http_proxy,  ?CONFIG_MAPPING, Map),
           HttpsProxy      = ?CONFIG_MODULE:get(https_proxy, ?CONFIG_MAPPING, Map),
           ProxyExclusions = ?CONFIG_MODULE:get(proxy_exclusions, ?CONFIG_MAPPING, Map),
-          rabbit_log:debug("Configured HTTP proxy: ~p, HTTPS proxy: ~p, exclusions: ~p",
+          rabbit_log:info("Peer discovery configured HTTP proxy: ~p, HTTPS proxy: ~p, exclusions: ~p",
                            [HttpProxy, HttpsProxy, ProxyExclusions]),
           maybe_set_proxy(proxy, HttpProxy, ProxyExclusions),
           maybe_set_proxy(https_proxy, HttpsProxy, ProxyExclusions),
