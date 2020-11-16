@@ -1,5 +1,12 @@
 # RabbitMQ Peer Discovery Commons
 
+## This was migrated to https://github.com/rabbitmq/rabbitmq-server
+
+This repository has been moved to the main unified RabbitMQ "monorepo", including all open issues. You can find the source under [/deps/rabbitmq_peer_discovery_common](https://github.com/rabbitmq/rabbitmq-server/tree/master/deps/rabbitmq_peer_discovery_common).
+All issues have been transferred.
+
+## Introduction
+
 This library is similar in purpose to [rabbit-common](https://github.com/rabbitmq/rabbitmq-common) but focusses exclusively
 on [RabbitMQ peer discovery backends](https://www.rabbitmq.com/cluster-formation.html) (available as [a plugin](https://github.com/rabbitmq/rabbitmq-autocluster) for 3.6.x releases).
 
